@@ -25,8 +25,8 @@ A Model Context Protocol (MCP) server that provides **55 tools** for the Datto R
 ## Installation
 
 ```bash
-git clone https://github.com/vmorgunov/datto-rmm-mcp-server.git
-cd datto-rmm-mcp-server
+git clone https://github.com/vmorgunov/datto-rmm-mcp.git
+cd datto-rmm-mcp
 npm install
 npm run build
 ```
@@ -40,7 +40,7 @@ Add to your `claude_desktop_config.json`:
   "mcpServers": {
     "datto-rmm": {
       "command": "node",
-      "args": ["/path/to/datto-rmm-mcp-server/build/index.js"],
+      "args": ["/path/to/datto-rmm-mcp/build/index.js"],
       "env": {
         "DATTO_API_KEY": "your-api-key",
         "DATTO_API_SECRET": "your-api-secret",
@@ -55,7 +55,7 @@ Add to your `claude_desktop_config.json`:
 
 ```
 Command:   npx
-Arguments: -force -y github:vmorgunov/datto-rmm-mcp-server
+Arguments: -force -y github:vmorgunov/datto-rmm-mcp
 Env:       DATTO_API_KEY=..., DATTO_API_SECRET=..., DATTO_PLATFORM=merlot
 ```
 
@@ -189,7 +189,7 @@ The Datto API allows 600 GET requests and 100 write requests per 60 seconds. Use
 2. **Installieren:** `git clone`, `npm install`, `npm run build`
 3. **Konfigurieren:** Umgebungsvariablen setzen (`DATTO_API_KEY`, `DATTO_API_SECRET`, `DATTO_PLATFORM`)
 4. **Starten:** `npm start` oder ueber Claude Desktop / MetaMCP einbinden
-5. **MetaMCP:** `npx -force -y github:vmorgunov/datto-rmm-mcp-server`
+5. **MetaMCP:** `npx -force -y github:vmorgunov/datto-rmm-mcp`
 
 ## License
 
