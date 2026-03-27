@@ -27,12 +27,6 @@ export const staticResources: ResourceDefinition[] = [
     description: 'List of all managed sites',
     mimeType: 'application/json',
   },
-  {
-    uri: 'datto://alerts/open',
-    name: 'Open Alerts',
-    description: 'Currently open alerts across all sites',
-    mimeType: 'application/json',
-  },
 ];
 
 export const resourceTemplates: ResourceTemplateDefinition[] = [
@@ -64,11 +58,6 @@ export async function handleResource(uri: string): Promise<string> {
 
   if (uri === 'datto://sites') {
     const result = await api.getAccountSites();
-    return JSON.stringify(result, null, 2);
-  }
-
-  if (uri === 'datto://alerts/open') {
-    const result = await api.getAccountOpenAlerts();
     return JSON.stringify(result, null, 2);
   }
 
