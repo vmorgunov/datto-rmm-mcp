@@ -1,36 +1,56 @@
 {
-  "name": "datto-rmm-mcp-server",
-  "version": "1.0.0",
-  "description": "MCP Server for Datto RMM — all API tools with Copilot Studio compatible schemas",
-  "main": "build/index.js",
+  "name": "@veeemlab/datto-rmm-mcp",
+  "version": "0.1.0",
+  "description": "Datto RMM MCP server with 55 tools covering the full Datto RMM API v2. Copilot Studio compatible flat schemas, multi-platform OAuth2.",
+  "type": "module",
+  "main": "dist/index.js",
   "bin": {
-    "datto-rmm-mcp-server": "build/index.js"
+    "datto-rmm-mcp": "dist/index.js"
   },
   "scripts": {
-    "build": "tsc",
-    "prepare": "tsc",
-    "start": "node build/index.js",
+    "build": "tsc && chmod +x dist/index.js",
+    "prepare": "npm run build || echo 'prepare: build skipped'",
+    "prepublishOnly": "npm run build",
+    "start": "node dist/index.js",
     "dev": "tsc --watch",
-    "inspect": "npx @modelcontextprotocol/inspector node build/index.js"
+    "inspect": "npx @modelcontextprotocol/inspector node dist/index.js"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.12.1",
-    "typescript": "^5.7.0"
+    "@modelcontextprotocol/sdk": "^1.12.1"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0"
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
   },
   "engines": {
     "node": ">=20.0.0"
   },
   "files": [
-    "build/"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "keywords": [
     "mcp",
+    "model-context-protocol",
     "datto",
     "rmm",
+    "kaseya",
+    "msp",
+    "claude",
     "copilot-studio"
   ],
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veeemlab/datto-rmm-mcp.git"
+  },
+  "homepage": "https://github.com/veeemlab/datto-rmm-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/veeemlab/datto-rmm-mcp/issues"
+  },
+  "author": "Vitalii Morgunov",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }
