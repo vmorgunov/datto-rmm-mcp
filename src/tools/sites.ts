@@ -28,11 +28,16 @@ export const siteTools: ToolDefinition[] = [
   },
   {
     name: 'create-site',
-    description: 'Create a new site. Pass site data as JSON string with fields: name (required), description, notes, onDemand (boolean), splashtopAutoInstall (boolean).',
+    description:
+      'Create a new site. Pass site data as JSON string with fields: name (required), description, notes, onDemand (boolean), splashtopAutoInstall (boolean).',
     inputSchema: {
       type: 'object',
       properties: {
-        siteData: { type: 'string', description: 'JSON string with site creation data: {"name":"Site Name","description":"...","notes":"...","onDemand":false,"splashtopAutoInstall":false}' },
+        siteData: {
+          type: 'string',
+          description:
+            'JSON string with site creation data: {"name":"Site Name","description":"...","notes":"...","onDemand":false,"splashtopAutoInstall":false}',
+        },
       },
       required: ['siteData'],
     },
@@ -44,12 +49,16 @@ export const siteTools: ToolDefinition[] = [
   },
   {
     name: 'update-site',
-    description: 'Update an existing site. Pass update data as JSON string with fields: name, description, notes, onDemand, splashtopAutoInstall.',
+    description:
+      'Update an existing site. Pass update data as JSON string with fields: name, description, notes, onDemand, splashtopAutoInstall.',
     inputSchema: {
       type: 'object',
       properties: {
         siteUid: { type: 'string', description: 'Site UID' },
-        siteData: { type: 'string', description: 'JSON string with site update data: {"name":"New Name","description":"..."}' },
+        siteData: {
+          type: 'string',
+          description: 'JSON string with site update data: {"name":"New Name","description":"..."}',
+        },
       },
       required: ['siteUid', 'siteData'],
     },
@@ -151,12 +160,17 @@ export const siteTools: ToolDefinition[] = [
   },
   {
     name: 'set-site-proxy',
-    description: 'Set or update proxy settings for a site. Pass proxy data as JSON string with fields: host, port, type, username, password.',
+    description:
+      'Set or update proxy settings for a site. Pass proxy data as JSON string with fields: host, port, type, username, password.',
     inputSchema: {
       type: 'object',
       properties: {
         siteUid: { type: 'string', description: 'Site UID' },
-        proxyData: { type: 'string', description: 'JSON string with proxy settings: {"host":"proxy.example.com","port":8080,"type":"HTTP","username":"...","password":"..."}' },
+        proxyData: {
+          type: 'string',
+          description:
+            'JSON string with proxy settings: {"host":"proxy.example.com","port":8080,"type":"HTTP","username":"...","password":"..."}',
+        },
       },
       required: ['siteUid', 'proxyData'],
     },

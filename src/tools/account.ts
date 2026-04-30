@@ -39,7 +39,8 @@ export const accountTools: ToolDefinition[] = [
   },
   {
     name: 'list-account-devices',
-    description: 'List all devices in the account. Supports pagination and filtering by hostname, deviceType, operatingSystem, siteName, and filterId.',
+    description:
+      'List all devices in the account. Supports pagination and filtering by hostname, deviceType, operatingSystem, siteName, and filterId.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -53,7 +54,15 @@ export const accountTools: ToolDefinition[] = [
       },
     },
     handler: async (args) => {
-      const query = buildQuery(args, ['page', 'max', 'filterId', 'hostname', 'deviceType', 'operatingSystem', 'siteName']);
+      const query = buildQuery(args, [
+        'page',
+        'max',
+        'filterId',
+        'hostname',
+        'deviceType',
+        'operatingSystem',
+        'siteName',
+      ]);
       const result = await api.getAccountDevices(query);
       return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
     },
@@ -212,7 +221,8 @@ export const accountTools: ToolDefinition[] = [
   },
   {
     name: 'reset-api-keys',
-    description: 'Reset the authenticated user API keys. WARNING: This will invalidate current credentials.',
+    description:
+      'Reset the authenticated user API keys. WARNING: This will invalidate current credentials.',
     inputSchema: { type: 'object', properties: {}, required: [] },
     handler: async () => {
       const result = await api.resetApiKeys();

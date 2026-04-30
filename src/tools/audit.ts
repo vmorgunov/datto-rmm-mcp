@@ -50,7 +50,10 @@ export const auditTools: ToolDefinition[] = [
     inputSchema: {
       type: 'object',
       properties: {
-        macAddress: { type: 'string', description: 'MAC address without separators (e.g. AABBCCDDEEFF)' },
+        macAddress: {
+          type: 'string',
+          description: 'MAC address without separators (e.g. AABBCCDDEEFF)',
+        },
       },
       required: ['macAddress'],
     },

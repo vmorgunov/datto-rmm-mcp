@@ -81,11 +81,11 @@ npx @modelcontextprotocol/inspector npx -y @veeemlab/datto-rmm-mcp
 
 ## Environment Variables
 
-| Variable | Required | Default | Description |
-|----------|----------|---------|-------------|
-| `DATTO_API_KEY` | Yes | — | Datto RMM API Key |
-| `DATTO_API_SECRET` | Yes | — | Datto RMM API Secret |
-| `DATTO_PLATFORM` | No | `merlot` | Platform: `pinotage`, `merlot`, `concord`, `vidal`, `zinfandel`, `syrah` |
+| Variable           | Required | Default  | Description                                                              |
+| ------------------ | -------- | -------- | ------------------------------------------------------------------------ |
+| `DATTO_API_KEY`    | Yes      | —        | Datto RMM API Key                                                        |
+| `DATTO_API_SECRET` | Yes      | —        | Datto RMM API Secret                                                     |
+| `DATTO_PLATFORM`   | No       | `merlot` | Platform: `pinotage`, `merlot`, `concord`, `vidal`, `zinfandel`, `syrah` |
 
 ## Datto API Setup
 
@@ -98,108 +98,108 @@ npx @modelcontextprotocol/inspector npx -y @veeemlab/datto-rmm-mcp
 
 ### Account (13 tools)
 
-| Tool | Description |
-|------|-------------|
-| `get-account` | Get account details and device summary |
-| `list-account-sites` | List all sites in the account |
-| `list-account-devices` | List all devices with filtering |
-| `list-account-open-alerts` | List open alerts |
-| `list-account-resolved-alerts` | List resolved alerts |
-| `list-account-users` | List account users |
-| `list-account-components` | List available components |
-| `list-account-variables` | List account-level variables |
-| `create-account-variable` | Create an account variable |
-| `update-account-variable` | Update an account variable |
-| `delete-account-variable` | Delete an account variable |
-| `list-dnet-site-mappings` | List Datto Networking site mappings |
-| `reset-api-keys` | Reset the authenticated user's API keys |
+| Tool                           | Description                             |
+| ------------------------------ | --------------------------------------- |
+| `get-account`                  | Get account details and device summary  |
+| `list-account-sites`           | List all sites in the account           |
+| `list-account-devices`         | List all devices with filtering         |
+| `list-account-open-alerts`     | List open alerts                        |
+| `list-account-resolved-alerts` | List resolved alerts                    |
+| `list-account-users`           | List account users                      |
+| `list-account-components`      | List available components               |
+| `list-account-variables`       | List account-level variables            |
+| `create-account-variable`      | Create an account variable              |
+| `update-account-variable`      | Update an account variable              |
+| `delete-account-variable`      | Delete an account variable              |
+| `list-dnet-site-mappings`      | List Datto Networking site mappings     |
+| `reset-api-keys`               | Reset the authenticated user's API keys |
 
 ### Sites (15 tools)
 
-| Tool | Description |
-|------|-------------|
-| `get-site` | Get site details |
-| `create-site` | Create a new site |
-| `update-site` | Update a site |
-| `list-site-devices` | List devices in a site |
+| Tool                        | Description                              |
+| --------------------------- | ---------------------------------------- |
+| `get-site`                  | Get site details                         |
+| `create-site`               | Create a new site                        |
+| `update-site`               | Update a site                            |
+| `list-site-devices`         | List devices in a site                   |
 | `list-site-devices-network` | List devices with network interface info |
-| `list-site-open-alerts` | List open alerts for a site |
-| `list-site-resolved-alerts` | List resolved alerts for a site |
-| `get-site-settings` | Get site settings |
-| `set-site-proxy` | Set proxy settings |
-| `delete-site-proxy` | Delete proxy settings |
-| `get-site-variables` | List site variables |
-| `create-site-variable` | Create a site variable |
-| `update-site-variable` | Update a site variable |
-| `delete-site-variable` | Delete a site variable |
-| `list-site-device-filters` | List device filters for a site |
+| `list-site-open-alerts`     | List open alerts for a site              |
+| `list-site-resolved-alerts` | List resolved alerts for a site          |
+| `get-site-settings`         | Get site settings                        |
+| `set-site-proxy`            | Set proxy settings                       |
+| `delete-site-proxy`         | Delete proxy settings                    |
+| `get-site-variables`        | List site variables                      |
+| `create-site-variable`      | Create a site variable                   |
+| `update-site-variable`      | Update a site variable                   |
+| `delete-site-variable`      | Delete a site variable                   |
+| `list-site-device-filters`  | List device filters for a site           |
 
 ### Devices (9 tools)
 
-| Tool | Description |
-|------|-------------|
-| `get-device` | Get device details by UID |
-| `get-device-by-id` | Get device by numeric ID |
-| `get-device-by-mac` | Get device by MAC address |
-| `list-device-open-alerts` | List open alerts for a device |
+| Tool                          | Description                       |
+| ----------------------------- | --------------------------------- |
+| `get-device`                  | Get device details by UID         |
+| `get-device-by-id`            | Get device by numeric ID          |
+| `get-device-by-mac`           | Get device by MAC address         |
+| `list-device-open-alerts`     | List open alerts for a device     |
 | `list-device-resolved-alerts` | List resolved alerts for a device |
-| `move-device` | Move device to another site |
-| `create-quick-job` | Run a quick job on a device |
-| `set-device-udf` | Set user defined fields |
-| `set-device-warranty` | Set warranty date |
+| `move-device`                 | Move device to another site       |
+| `create-quick-job`            | Run a quick job on a device       |
+| `set-device-udf`              | Set user defined fields           |
+| `set-device-warranty`         | Set warranty date                 |
 
 ### Alerts (2 tools)
 
-| Tool | Description |
-|------|-------------|
-| `get-alert` | Get alert details |
+| Tool            | Description           |
+| --------------- | --------------------- |
+| `get-alert`     | Get alert details     |
 | `resolve-alert` | Resolve an open alert |
 
 ### Jobs (5 tools)
 
-| Tool | Description |
-|------|-------------|
-| `get-job` | Get job details |
-| `get-job-components` | List job components |
-| `get-job-results` | Get job results for a device |
-| `get-job-stdout` | Get job stdout |
-| `get-job-stderr` | Get job stderr |
+| Tool                 | Description                  |
+| -------------------- | ---------------------------- |
+| `get-job`            | Get job details              |
+| `get-job-components` | List job components          |
+| `get-job-results`    | Get job results for a device |
+| `get-job-stdout`     | Get job stdout               |
+| `get-job-stderr`     | Get job stderr               |
 
 ### Audit (5 tools)
 
-| Tool | Description |
-|------|-------------|
-| `get-device-audit` | Get device audit data |
-| `get-device-software` | List installed software |
+| Tool                      | Description                   |
+| ------------------------- | ----------------------------- |
+| `get-device-audit`        | Get device audit data         |
+| `get-device-software`     | List installed software       |
 | `get-device-audit-by-mac` | Get audit data by MAC address |
-| `get-esxi-audit` | Get ESXi host audit data |
-| `get-printer-audit` | Get printer audit data |
+| `get-esxi-audit`          | Get ESXi host audit data      |
+| `get-printer-audit`       | Get printer audit data        |
 
 ### Activity (1 tool)
 
-| Tool | Description |
-|------|-------------|
+| Tool                | Description                      |
+| ------------------- | -------------------------------- |
 | `get-activity-logs` | Get activity logs with filtering |
 
 ### System & Filters (5 tools)
 
-| Tool | Description |
-|------|-------------|
-| `get-system-status` | Get API system status |
-| `get-rate-limit` | Get rate limit status |
+| Tool                    | Description                  |
+| ----------------------- | ---------------------------- |
+| `get-system-status`     | Get API system status        |
+| `get-rate-limit`        | Get rate limit status        |
 | `get-pagination-config` | Get pagination configuration |
-| `list-default-filters` | List default device filters |
-| `list-custom-filters` | List custom device filters |
+| `list-default-filters`  | List default device filters  |
+| `list-custom-filters`   | List custom device filters   |
 
 ## Resources (6)
 
-| URI | Description |
-|-----|-------------|
-| `datto://account` | Account overview with device counts and subscription info |
-| `datto://sites` | List of all managed sites |
-| `datto://sites/{siteUid}` | Details for a specific site |
-| `datto://sites/{siteUid}/devices` | Devices in a specific site |
-| `datto://devices/{deviceUid}` | Details for a specific device |
+| URI                               | Description                                               |
+| --------------------------------- | --------------------------------------------------------- |
+| `datto://account`                 | Account overview with device counts and subscription info |
+| `datto://sites`                   | List of all managed sites                                 |
+| `datto://sites/{siteUid}`         | Details for a specific site                               |
+| `datto://sites/{siteUid}/devices` | Devices in a specific site                                |
+| `datto://devices/{deviceUid}`     | Details for a specific device                             |
 
 ## Local Development
 
@@ -209,6 +209,18 @@ cd datto-rmm-mcp
 npm install
 npm run build
 npm start
+```
+
+### Quality checks
+
+```bash
+npm run lint           # ESLint
+npm run lint:fix       # auto-fix lint issues
+npm run format         # Prettier write
+npm run format:check   # Prettier check (CI-friendly)
+npm test               # Vitest one-shot
+npm run test:watch     # Vitest watch mode
+npm run test:coverage  # Vitest with v8 coverage
 ```
 
 ## Troubleshooting

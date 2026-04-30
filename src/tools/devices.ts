@@ -47,7 +47,10 @@ export const deviceTools: ToolDefinition[] = [
     inputSchema: {
       type: 'object',
       properties: {
-        macAddress: { type: 'string', description: 'MAC address without separators (e.g. AABBCCDDEEFF)' },
+        macAddress: {
+          type: 'string',
+          description: 'MAC address without separators (e.g. AABBCCDDEEFF)',
+        },
       },
       required: ['macAddress'],
     },
@@ -112,12 +115,17 @@ export const deviceTools: ToolDefinition[] = [
   },
   {
     name: 'create-quick-job',
-    description: 'Create and run a quick job on a device. Pass job data as JSON string with fields: jobName (required), jobComponent (required object with componentUid and variables).',
+    description:
+      'Create and run a quick job on a device. Pass job data as JSON string with fields: jobName (required), jobComponent (required object with componentUid and variables).',
     inputSchema: {
       type: 'object',
       properties: {
         deviceUid: { type: 'string', description: 'Device UID' },
-        jobData: { type: 'string', description: 'JSON string with job data: {"jobName":"My Job","jobComponent":{"componentUid":"abc-123","variables":{"var1":"val1"}}}' },
+        jobData: {
+          type: 'string',
+          description:
+            'JSON string with job data: {"jobName":"My Job","jobComponent":{"componentUid":"abc-123","variables":{"var1":"val1"}}}',
+        },
       },
       required: ['deviceUid', 'jobData'],
     },
@@ -129,12 +137,17 @@ export const deviceTools: ToolDefinition[] = [
   },
   {
     name: 'set-device-udf',
-    description: 'Set user defined fields (UDF) on a device. Pass UDF data as JSON string with fields udf1 through udf30.',
+    description:
+      'Set user defined fields (UDF) on a device. Pass UDF data as JSON string with fields udf1 through udf30.',
     inputSchema: {
       type: 'object',
       properties: {
         deviceUid: { type: 'string', description: 'Device UID' },
-        udfData: { type: 'string', description: 'JSON string with UDF data: {"udf1":"value1","udf2":"value2",...,"udf30":"value30"}' },
+        udfData: {
+          type: 'string',
+          description:
+            'JSON string with UDF data: {"udf1":"value1","udf2":"value2",...,"udf30":"value30"}',
+        },
       },
       required: ['deviceUid', 'udfData'],
     },
@@ -151,12 +164,17 @@ export const deviceTools: ToolDefinition[] = [
       type: 'object',
       properties: {
         deviceUid: { type: 'string', description: 'Device UID' },
-        warrantyDate: { type: 'string', description: 'Warranty expiry date in ISO 8601 format (yyyy-mm-dd)' },
+        warrantyDate: {
+          type: 'string',
+          description: 'Warranty expiry date in ISO 8601 format (yyyy-mm-dd)',
+        },
       },
       required: ['deviceUid', 'warrantyDate'],
     },
     handler: async (args) => {
-      const result = await api.setDeviceWarranty(args.deviceUid, { warrantyDate: args.warrantyDate });
+      const result = await api.setDeviceWarranty(args.deviceUid, {
+        warrantyDate: args.warrantyDate,
+      });
       return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
     },
   },

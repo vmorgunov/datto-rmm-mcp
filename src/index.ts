@@ -31,24 +31,27 @@ for (const tool of allTools) {
     shape[key] = zodType;
   }
 
-  server.tool(
-    tool.name,
-    tool.description,
-    shape,
-    async (args: Record<string, unknown>) => {
-      try {
-        const stringArgs: Record<string, string> = {};
-        for (const [k, v] of Object.entries(args)) {
-          if (v !== undefined) stringArgs[k] = String(v);
-        }
-        const result = await tool.handler(stringArgs);
-        return { ...result } as { content: Array<{ type: 'text'; text: string }>; isError?: boolean; [key: string]: unknown };
-      } catch (err: unknown) {
-        const message = err instanceof Error ? err.message : String(err);
-        return { content: [{ type: 'text' as const, text: `Error: ${message}` }], isError: true } as { content: Array<{ type: 'text'; text: string }>; isError: boolean; [key: string]: unknown };
+  server.tool(tool.name, tool.description, shape, async (args: Record<string, unknown>) => {
+    try {
+      const stringArgs: Record<string, string> = {};
+      for (const [k, v] of Object.entries(args)) {
+        if (v !== undefined) stringArgs[k] = String(v);
       }
-    },
-  );
+      const result = await tool.handler(stringArgs);
+      return { ...result } as {
+        content: Array<{ type: 'text'; text: string }>;
+        isError?: boolean;
+        [key: string]: unknown;
+      };
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      return { content: [{ type: 'text' as const, text: `Error: ${message}` }], isError: true } as {
+        content: Array<{ type: 'text'; text: string }>;
+        isError: boolean;
+        [key: string]: unknown;
+      };
+    }
+  });
 }
 
 // Register static resources

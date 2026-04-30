@@ -4,7 +4,8 @@ import { api } from '../datto-api.js';
 export const activityTools: ToolDefinition[] = [
   {
     name: 'get-activity-logs',
-    description: 'Get activity logs with optional filtering by date range, entities, categories, actions, sites, and users',
+    description:
+      'Get activity logs with optional filtering by date range, entities, categories, actions, sites, and users',
     inputSchema: {
       type: 'object',
       properties: {
@@ -12,13 +13,19 @@ export const activityTools: ToolDefinition[] = [
         order: { type: 'string', description: 'Sort order: asc or desc' },
         from: { type: 'string', description: 'Start date in UTC (yyyy-MM-ddTHH:mm:ssZ)' },
         until: { type: 'string', description: 'End date in UTC (yyyy-MM-ddTHH:mm:ssZ)' },
-        entities: { type: 'string', description: 'Comma-separated entity types to filter (e.g. device,user)' },
+        entities: {
+          type: 'string',
+          description: 'Comma-separated entity types to filter (e.g. device,user)',
+        },
         categories: { type: 'string', description: 'Comma-separated categories to filter' },
         actions: { type: 'string', description: 'Comma-separated actions to filter' },
         siteIds: { type: 'string', description: 'Comma-separated site IDs to filter' },
         userIds: { type: 'string', description: 'Comma-separated user IDs to filter' },
         page: { type: 'string', description: 'Pagination direction: next or previous' },
-        searchAfter: { type: 'string', description: 'Pagination pointer (comma-separated values from previous response)' },
+        searchAfter: {
+          type: 'string',
+          description: 'Pagination pointer (comma-separated values from previous response)',
+        },
       },
     },
     handler: async (args) => {
